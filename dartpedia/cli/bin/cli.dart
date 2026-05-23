@@ -7,7 +7,7 @@ void main(List<String> arguments) {
     printUsage();
   } else if (arguments.first == 'version'){
     print ('Dartpedia CLI version $version');
-  } else if(arguments.first == 'search'){
+  } else if(arguments.first == 'wikipedia'){
     final inputArgs = arguments.length >1 ? arguments.sublist(1) : null;
     searchWikipedia(inputArgs);
   } else {
@@ -19,13 +19,19 @@ void searchWikipedia(List<String>? arguments) async{
 
   if(arguments == null || arguments.isEmpty){
     print('Please provide an article title');
-    articleTitle =stdin.readLineSync() ?? '';
+    final inputFromStdin = stdin.readLineSync() ?? '';
+    if(inputFromStdin == 0 || inputFromStdin.isEmpty){
+      print('No article title provided. Exiting');
+      return;
+    }
+    articleTitle = inputFromStdin;
   } else{
     articleTitle = arguments.join(' ');
   }
   print('Looking up articles about "$articleTitle". Please wait.');
-  print('Here ya go');
-  print('(Pretend this is an article title about $articleTitle)');
+  
+  var articleContent = await getWikipediaArticle(articleTitle);
+  print(articleContent);
 }
 
 void printUsage() {
