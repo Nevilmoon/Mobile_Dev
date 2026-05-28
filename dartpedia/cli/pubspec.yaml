@@ -3,10 +3,12 @@ publish_to: none
 description: A sample command-line application.
 version: 1.0.0
 resolution: workspace
+
 # repository: https://github.com/my_org/my_repo
 
 environment:
   sdk: ^3.12.0
+  
 
 # Add regular dependencies here.
 dependencies:
