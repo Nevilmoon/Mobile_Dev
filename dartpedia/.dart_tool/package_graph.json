@@ -18,7 +18,9 @@
       "dependencies": [
         "command_runner",
         "http",
-        "path"
+        "logging",
+        "path",
+        "wikipedia"
       ],
       "devDependencies": [
         "lints",
@@ -96,6 +98,11 @@
         "meta",
         "web"
       ]
+    },
+    {
+      "name": "logging",
+      "version": "1.3.0",
+      "dependencies": []
     },
     {
       "name": "yaml",
@@ -366,11 +373,6 @@
       "dependencies": [
         "source_span"
       ]
-    },
-    {
-      "name": "logging",
-      "version": "1.3.0",
-      "dependencies": []
     },
     {
       "name": "web_socket",

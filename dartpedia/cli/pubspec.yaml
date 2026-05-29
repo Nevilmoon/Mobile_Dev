@@ -16,6 +16,9 @@ dependencies:
   command_runner:
     path: ../command_runner
   path: ^1.9.0
+  wikipedia:
+    path: ../wikipedia
+  logging: ^1.2.0
 
 dev_dependencies:
   lints: ^6.0.0
